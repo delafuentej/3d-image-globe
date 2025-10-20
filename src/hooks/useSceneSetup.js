@@ -18,6 +18,8 @@ export const useSceneSetup = (backgroundColor) => {
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(parseInt(backgroundColor, 16));
   renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.outputEncoding = THREE.LinearEncoding;
+  renderer.gammaFactor = 2.2;
 
   return { scene, camera, renderer };
 };
