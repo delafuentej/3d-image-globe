@@ -9,7 +9,7 @@ const Globe = ({
   baseWidth = 1,
   baseHeight = 0.6,
   sphereRadius = 5,
-  backgroundColor = "3b3b3b",
+  backgroundColor = "#1d1d1d",
 }) => {
   const globeRef = useRef(null);
   const { scene, camera, renderer } = useSceneSetup(backgroundColor);
@@ -36,14 +36,13 @@ const Globe = ({
       return new THREE.PlaneGeometry(width, height);
     };
 
-    const loadImageMesh = (phi, theta) => {
+    const loadImageMesh = (x, y, z) => {
       textureLoader.load(
         getRandomImagePath(),
         (texture) => {
           texture.generateMipmaps = false;
           texture.minFilter = THREE.LinearFilter;
           texture.magFilter = THREE.LinearFilter;
-          texture.encoding = THREE.LinearEncoding;
 
           const geometry = createImagePlane(texture);
           const material = new THREE.MeshBasicMaterial({
@@ -54,14 +53,12 @@ const Globe = ({
           });
 
           const mesh = new THREE.Mesh(geometry, material);
-          mesh.position.x = sphereRadius * Math.cos(theta) * Math.sin(phi);
-          mesh.position.y = sphereRadius * Math.sin(theta) * Math.sin(phi);
-          mesh.position.z = sphereRadius * Math.cos(phi);
-
+          mesh.position.set(x, y, z);
           mesh.lookAt(0, 0, 0);
-          mesh.rotateY(Math.PI);
+          mesh.rotateY(Math.PI); // para que la imagen mire hacia afuera
 
           scene.add(mesh);
+
           loadedCount++;
           if (loadedCount === totalItems) animate();
         },
@@ -70,11 +67,21 @@ const Globe = ({
       );
     };
 
+    // ✅ Distribución Fibonacci Sphere
     const createSphere = () => {
+      const offset = 2 / totalItems;
+      const increment = Math.PI * (3 - Math.sqrt(5)); // número áureo
+
       for (let i = 0; i < totalItems; i++) {
-        const phi = Math.acos(-1 + (2 * i) / totalItems);
-        const theta = Math.sqrt(totalItems * Math.PI) * phi;
-        loadImageMesh(phi, theta);
+        const y = i * offset - 1 + offset / 2;
+        const r = Math.sqrt(1 - y * y);
+        const phi = i * increment;
+
+        const x = Math.cos(phi) * r * sphereRadius;
+        const z = Math.sin(phi) * r * sphereRadius;
+        const posY = y * sphereRadius;
+
+        loadImageMesh(x, posY, z);
       }
     };
 
@@ -99,7 +106,9 @@ const Globe = ({
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      //globeRef.current.removeChild(renderer.domElement);
+      if (globeRef.current?.contains(renderer.domElement)) {
+        globeRef.current.removeChild(renderer.domElement);
+      }
     };
   }, [
     totalImages,
