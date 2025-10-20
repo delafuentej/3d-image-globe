@@ -11,7 +11,7 @@ export const useGlobeImages = ({
   const textureLoader = new THREE.TextureLoader();
 
   const getRandomImagePath = () =>
-    `/images/img${Math.floor(Math.random() * totalImages) + 1}.jpg`;
+    `/images/webp/img${Math.floor(Math.random() * totalImages) + 1}.webp`;
 
   const createImagePlane = (texture) => {
     const imageAspect = texture.image.width / texture.image.height;
