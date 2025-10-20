@@ -13,6 +13,7 @@ export const useSceneSetup = (backgroundColor) => {
     antialias: true,
     alpha: true,
     preserveDrawingBuffer: true,
+    powerPreference: "high-performance",
   });
 
   renderer.setSize(window.innerWidth, window.innerHeight);
