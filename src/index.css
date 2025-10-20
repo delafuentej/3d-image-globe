@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap");
+@import "tailwindcss";
 
 @layer base {
   body {
@@ -8,14 +8,14 @@
   .font-exo {
     font-family: "Exo 2", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400; /* puedes cambiar entre 100 y 900 */
+    font-weight: 400;
     font-style: normal;
   }
 
   .font-orbitron {
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600; /* ajusta según tu diseño */
+    font-weight: 600;
     font-style: normal;
   }
 }
@@ -23,6 +23,13 @@
 @layer components {
   #navbar {
     @apply fixed w-screen flex justify-center items-center p-12 z-20 top-0;
+
+    h1 {
+      @apply uppercase text-[18px];
+    }
+  }
+  .globe {
+    @apply w-screen h-screen overflow-hidden;
   }
 
   #footer {
