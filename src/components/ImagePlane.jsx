@@ -1,5 +1,5 @@
 // components/three/ImagePlane.js
-import * as THREE from "three";
+import { PlaneGeometry, MeshBasicMaterial, Mesh, DoubleSide } from "three";
 
 export const createImagePlane = (texture, baseWidth, baseHeight) => {
   const imageAspect = texture.image.width / texture.image.height;
@@ -12,11 +12,11 @@ export const createImagePlane = (texture, baseWidth, baseHeight) => {
     width = height * imageAspect;
   }
 
-  const geometry = new THREE.PlaneGeometry(width, height);
-  const material = new THREE.MeshBasicMaterial({
+  const geometry = new PlaneGeometry(width, height);
+  const material = new MeshBasicMaterial({
     map: texture,
-    side: THREE.DoubleSide,
+    side: DoubleSide,
   });
 
-  return new THREE.Mesh(geometry, material);
+  return new Mesh(geometry, material);
 };
