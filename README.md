@@ -55,13 +55,6 @@ This project leverages modern frontend and 3D technologies:
 
 - WebGL – Graphics API underlying Three.js for high-performance 3D rendering in the browser
 
-- **Frontend:** React 19
-- **3D Rendering & Animations:** Three.js, React-Three-Fiber, @react-three/drei, GSAP, @gsap/react
-- **State Management:** Zustand
-- **Styling:** TailwindCSS, clsx
-- **Responsive Utilities:** react-responsive
-- **Build Tool:** Vite
-
 ---
 
 ## 🛠️ Getting Started
