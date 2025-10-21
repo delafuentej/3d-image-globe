@@ -1,7 +1,6 @@
 # 🌐🖼 3D Image Globe
 
 A React-based 3D globe that displays images mapped on a sphere. Built with React, Three.js, and TailwindCSS, the globe allows user interaction via mouse or touch and asynchronously loads images for optimal performance.
-This project is based on the tutorial **“MacBook Landing Page - GSAP, Three.js, React”** by **JavaScript Mastery**.
 
 ![Landing Page Demo](public/images/app/3d-image-globe.png)
 
