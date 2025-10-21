@@ -11,15 +11,15 @@ This project is based on the tutorial **“MacBook Landing Page - GSAP, Three.js
 
 ## 🔥 Highlights
 
-- Interactive 3D globe: Rotate, zoom, and explore images on a fully interactive 3D sphere.
+- **Interactive 3D globe**: Rotate, zoom, and explore images on a fully interactive 3D sphere.
 
-- Smooth performance: Optimized animation loop only renders when needed.
+- **Smooth performance**: Optimized animation loop only renders when needed.
 
-- Responsive design: Automatically adjusts image sizes for different devices.
+- **Responsive design**: Automatically adjusts image sizes for different devices.
 
-- Lazy loading: Loads the Globe component asynchronously for faster page load.
+- **Lazy loading**: Loads the Globe component asynchronously for faster page load.
 
-- Fibonacci sphere layout: Images are evenly distributed for an aesthetic visual.
+- **Fibonacci sphere layout**: Images are evenly distributed for an aesthetic visual.
 
 ---
 
@@ -36,6 +36,28 @@ This project is based on the tutorial **“MacBook Landing Page - GSAP, Three.js
 - Responsive image sizes for mobile and desktop
 
 - Easy to configure sphere radius, number of images, and image dimensions
+
+---
+
+## Components:
+
+- **App.jsx** – Main entry point; lazy-loads the Globe component and renders Navbar and Footer.
+
+- **Globe.jsx** – Creates and renders the 3D globe with images using custom hooks.
+
+- **Navbar/Footer** – Optional UI components for page layout.
+
+---
+
+## Hooks:
+
+- **useSceneSetup** – Initializes Three.js scene, camera, and renderer with high-performance settings.
+
+- **useOrbitControls** – Wraps Three.js OrbitControls for smooth camera interaction.
+
+- **useGlobeImages** – Preloads images, creates plane meshes, and maps them on the sphere using Fibonacci sphere distribution.
+
+- **useAnimationLoop** – Optimized render loop; only renders when scene changes occur and handles window resizing.
 
 ---
 
