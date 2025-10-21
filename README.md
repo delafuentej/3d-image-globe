@@ -1,20 +1,80 @@
-# React + Vite
+# 🌐🖼 3D Image Globe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based 3D globe that displays images mapped on a sphere. Built with React, Three.js, and TailwindCSS, the globe allows user interaction via mouse or touch and asynchronously loads images for optimal performance.
+This project is based on the tutorial **“MacBook Landing Page - GSAP, Three.js, React”** by **JavaScript Mastery**.
 
-Currently, two official plugins are available:
+![Landing Page Demo](public/images/app/3d-image-globe.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live Demo:** [three.js-3d-image-globe](https://3d-image-globe.vercel.app/)
 
-- source images: unsplash, freepik, pixabay
+---
 
-## React Compiler
+## 🔥 Highlights
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Interactive 3D globe: Rotate, zoom, and explore images on a fully interactive 3D sphere.
 
-## Expanding the ESLint configuration
+- Smooth performance: Optimized animation loop only renders when needed.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Responsive design: Automatically adjusts image sizes for different devices.
 
-# 3d-image-globe
+- Lazy loading: Loads the Globe component asynchronously for faster page load.
+
+- Fibonacci sphere layout: Images are evenly distributed for an aesthetic visual.
+
+---
+
+## 🚀 Features
+
+- Interactive 3D globe using Three.js
+
+- Images evenly distributed on a sphere via Fibonacci sphere algorithm
+
+- Lazy-loaded components for faster initial load
+
+- Optimized animation loop to reduce unnecessary rendering
+
+- Responsive image sizes for mobile and desktop
+
+- Easy to configure sphere radius, number of images, and image dimensions
+
+---
+
+## 🛠 Technology Stack
+
+This project leverages modern frontend and 3D technologies:
+
+- React 19 – Frontend UI library for building reusable components
+
+- Three.js 0.180 – 3D rendering engine used for the globe, meshes, and textures
+
+- TailwindCSS 4 – Utility-first CSS framework for styling and responsive layouts
+
+- Vite – Fast development server and build tool for modern JavaScript projects
+
+- ESLint – Code linting tool to enforce best practices and maintain code quality
+
+- WebGL – Graphics API underlying Three.js for high-performance 3D rendering in the browser
+
+- **Frontend:** React 19
+- **3D Rendering & Animations:** Three.js, React-Three-Fiber, @react-three/drei, GSAP, @gsap/react
+- **State Management:** Zustand
+- **Styling:** TailwindCSS, clsx
+- **Responsive Utilities:** react-responsive
+- **Build Tool:** Vite
+
+---
+
+## 🛠️ Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/delafuentej/3d-image-globe.git
+# Navigate into the project
+cd 3d-image-globe
+
+# Install dependencies
+npm install
+# or
+yarn install
+
+```
