@@ -23,14 +23,6 @@ export const useGlobeImages = ({
   const needsRender = useRef(true);
   const geometry = new PlaneGeometry(baseWidth, baseHeight);
 
-  // Tamaño adaptativo según pantalla
-  //   const getResponsiveSize = () => {
-  // const width = window.innerWidth;
-  // if (width <= 720) return 720;
-  // if (width <= 1080) return 1080;
-  // return 1920;
-  //   };
-
   // Precarga de texturas
   const preloadTextures = async () => {
     const loader = new TextureLoader();
@@ -38,7 +30,7 @@ export const useGlobeImages = ({
 
     for (let i = 1; i <= totalImages; i++) {
       // const size = getResponsiveSize();
-      const path = `/images-optimized/img${i}-1080.webp`;
+      const path = `/images/img${i}-1080.webp`;
 
       const texture = await new Promise((resolve, reject) => {
         loader.load(path, resolve, undefined, reject);
